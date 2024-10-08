@@ -69,8 +69,8 @@ HTML;
 
 
     //Recipients
-    $mail->setFrom('CINEMA@GM.com', 'GM');
-    $mail->addAddress($email, 'German Metzger');     //Add a recipient
+    $mail->setFrom('CINELAND@GM.com', 'CINELAND');
+    $mail->addAddress($email, 'CineLand');     //Add a recipient
 
 
 
