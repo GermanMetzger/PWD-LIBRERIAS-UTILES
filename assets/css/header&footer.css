@@ -56,35 +56,13 @@ footer {
     text-align: center;
     padding: 20px 0;
     position: relative;
+    left: 0;
     width: 100%;
     bottom: 0;
+    margin-top: 50px;
+    max-height: 10%;
 }
 
-footer p {
-    margin: 0;
-    font-size: 0.9em;
-    font-weight: bold;
-}
-
-footer .social-media {
-    margin-top: 15px;
-}
-
-footer .social-media a {
-    margin: 0 10px;
-    display: inline-block;
-}
-
-footer .social-media img {
-    width: 30px;
-    height: 30px;
-    filter: invert(100%); /* Cambia el color de los íconos a blanco */
-    transition: transform 0.3s;
-}
-
-footer .social-media a:hover img {
-    transform: scale(1.2); /* Agranda el ícono al pasar el mouse */
-}
 
 .container {
     flex: 1;
@@ -112,4 +90,39 @@ nav ul li a {
 
 nav ul li a:hover {
     text-decoration: underline;
+}
+
+.pres{
+    display: flex;
+    width: 80%;
+    height: 90%;
+    background-color: #333;
+    color: white;
+    margin: 0 auto;
+    border-radius: 15px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pres a {
+    text-decoration: none;
+    color: white;
+}
+
+.pres a:hover {
+    text-decoration: underline;
+}
+
+.pres li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px;
+}
+
+.pres ul {
+    list-style-type: none; /* Quita las viñetas */
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Centra el contenido del texto */
 }

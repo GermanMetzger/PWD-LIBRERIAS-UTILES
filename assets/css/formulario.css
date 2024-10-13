@@ -6,8 +6,12 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    margin: 0 auto;
+    height: 100%;
+    width: 50%;
     background-color: #333;
+    border-radius: 15px;
+    padding-bottom: 25px;
 }
 
 .centro label {
@@ -17,11 +21,19 @@
 }
 
 .form-container {
-    width: 300px;
-    /* Ajustar el ancho del formulario */
+    width: 50%;
     margin: 0 auto;
-    /* Centrar el formulario */
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
 
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 h2 {
