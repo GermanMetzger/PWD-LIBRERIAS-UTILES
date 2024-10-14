@@ -18,20 +18,51 @@
         <?php
         include_once("../../utils/functions.php");
         include_once('../../../assets/structure/header.php');
+
+
+        $datos = dataSubmitted();
+        $mail = $datos['email'];
+        $nombre = $datos['name'];
+        $contraseña = $datos['password'];
+        $userABM = new userAbm();
+        $mailExistente = false;
+
+        $usuario = $userABM->obtenerDatosUserPorMail($datos["email"]);
+        if (empty($usuario)) {
+            $mail = $user->mandarCodigo($mail);
+            //mail enviado correctamente
+        } else {
+            $mailExistente = true;
+        }
+
+
         ?>
-        
+
         <main>
-
-        <div class="centro">
-            <h2>Por favor verifica tu email para completar la verificacion.</h2>
-            <form action="verificacionAction" method="post">
-                <label for="codigo">Codgio:</label>
-                <input type="text" name="codigo" id="codigo">
-                <input type="submit" value="Enviar">
-            </form>
-        </div>
-
-
+            <div class="centro">
+                <?php if ($mailExistente): ?>
+                    <!-- Si el mail ya existe, muestra el mensaje -->
+                    <h2>El email ya está registrado, por favor usa otro correo electrónico.</h2>
+                <?php else: ?>
+                    <!-- Si el mail no existe, muestra el formulario -->
+                    <h2>Por favor verifica tu email para completar la verificación.</h2>
+                    <h5>
+                        <?php echo $mail["estado"]; ?>
+                    </h5>
+                    <form action="verificacionAction.php" method="post">
+                        <!-- envio por oculto la información del usuario y el código de verificación -->
+                        <input type="hidden" name="name" value='<?php echo $datos['name']; ?>'>
+                        <input type="hidden" name="password" value='<?php echo $datos['password']; ?>'>
+                        <input type="hidden" name="email" value='<?php echo $datos['email']; ?>'>
+                        <input type="hidden" name="tipoVerificacion" value='1'>
+                        <input type="hidden" name="codigoSV" value='<?php echo $mail["codigo"]; ?>'>
+                        <!-- ----------------------------------------------------------------------- -->
+                        <label for="codigo">Código:</label>
+                        <input type="text" name="codigo" id="codigo">
+                        <input type="submit" value="Enviar">
+                    </form>
+                <?php endif; ?>
+            </div>
         </main>
 
         <?php
@@ -41,22 +72,3 @@
 </body>
 
 </html>
-<?php
-
-$datos = dataSubmitted();
-$mail = $datos['email'];
-$nombre = $datos['name'];
-$contraseña = $datos['password'];
-
-$user = new userAbm();
-$datos = $user->mandarCodigo($mail);
-//mail enviado correctamente
-if($datos["mailEnviado"]){
-    echo $datos["codigo"];
-
-
-}else{
-    echo "Error al enviar:".$datos["mailError"];
-}
-
-?>

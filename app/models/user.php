@@ -2,7 +2,7 @@
 
 include_once("../../models/connector/BaseDatos.php");
 
-class User {
+class user {
 
     private $mail;
     private $nombre;
@@ -112,20 +112,22 @@ class User {
         $resp = false;
         $base = new BaseDatos();
 
+
         $sql = "INSERT INTO user(mail, nombre, contraseña) VALUES(
             '" . $this->getMail() . "', 
             '" . $this->getNombre() . "', 
             " . $this->getContraseña() . "
             );";
+            
 
         if ($base->Iniciar()) {
-            if ($elid = $base->Ejecutar($sql)) {
+            if ($base->Ejecutar($sql)) {
                 $resp = true;
             } else {
-                $this->setMsjOperacion("Tabla->insertar: " . $base->getError());
+                $this->setMsjOperacion("User->insertar: " . $base->getError());
             }
         } else {
-            $this->setMsjOperacion("Tabla->insertar: " . $base->getError());
+            $this->setMsjOperacion("User->insertar: " . $base->getError());
         }
         return $resp;
     }
@@ -182,6 +184,49 @@ class User {
             $this->setMsjOperacion("User->eliminar: " . $base->getError());
         }
         return $resp;
+    }
+
+
+        /**
+     * Esta función recibe condiciones de busqueda en forma de consulta sql para obtener
+     * los registros requeridos.
+     * Si por parámetro se envía el valor "" se devolveran todos los registros de la tabla
+     * 
+     * La función devuelve un arreglo compuesto por todos los objetos que cumplen la condición indicada
+     * por parámetro
+     * 
+     * @return array
+     */
+    public function listar($parametro)
+    {
+        $arreglo = array();
+        $base = new BaseDatos();
+
+        $sql = "SELECT * FROM user ";
+
+        if ($parametro != "") {
+            $sql .= 'WHERE ' . $parametro;
+        }
+
+        $res = $base->Ejecutar($sql);
+        if ($res > -1) {
+            if ($res > 0) {
+
+                while ($row = $base->Registro()) {
+
+                    $obj = new user();
+                    $obj->setear(
+                        $row['mail'],
+                        $row['nombre'],
+                        $row['contraseña']
+                    );
+                    array_push($arreglo, $obj);
+                }
+            }
+        } else {
+            $this->setMsjOperacion("User->listar: " . $base->getError());
+        }
+        return $arreglo;
     }
 
 
