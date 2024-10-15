@@ -17,7 +17,7 @@ switch ($datos["tipoVerificacion"]) {
                 <title>Redireccionando...</title>
                 <script>
                     alert("Registrado correctamente. por favor inicie sesión!")
-                    window.location.href = "http://localhost/LogIn/app/views/login.php";
+                    window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/login.php";
                 </script>
             <?php
             };
@@ -25,7 +25,7 @@ switch ($datos["tipoVerificacion"]) {
             ?>
             <script>
                 alert("Error: codigo incorrecto")
-                window.location.href = "http://localhost/LogIn/app/views/register.php";
+                window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/register.php";
             </script>
             <?php
         }
@@ -64,7 +64,7 @@ switch ($datos["tipoVerificacion"]) {
                     } else {
                         loguear(email, name, password);
                     }
-                    window.location.href = "http://localhost/LogIn/app/views/actions/homeAction.php";
+                    window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/actions/homeAction.php";
                 </script>
             <?php
             //contraseña incorrecta
@@ -72,7 +72,7 @@ switch ($datos["tipoVerificacion"]) {
                 ?>
                 <script>
                     alert("Error: Mail o contraseña incorrecta (contraseña)")
-                    window.location.href = "http://localhost/LogIn/app/views/login.php";
+                    window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/login.php";
                 </script>
                 <?php
             }
@@ -80,7 +80,7 @@ switch ($datos["tipoVerificacion"]) {
             ?>
             <script>
                 alert("Error: Mail no existente")
-                window.location.href = "http://localhost/LogIn/app/views/register.php";
+                window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/register.php";
             </script>
             <?php
         }
@@ -105,7 +105,7 @@ switch ($datos["tipoVerificacion"]) {
             ?>
             <script>
                 alert("Error: Codigo incorrecto")
-                window.location.href = "http://localhost/LogIn/app/views/lostPassword.php";
+                window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/lostPassword.php";
             </script>
             <?php
         }
