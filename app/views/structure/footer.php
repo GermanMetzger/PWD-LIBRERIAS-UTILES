@@ -8,14 +8,14 @@
 </head>
 
 <body>
-    <footer class="bg-dark text-warning py-3" style="position: absolute; bottom: 0; width: 100%;">
+    <footer class="bg-dark py-3" style="position: absolute; bottom: 0; width: 100%;">
         <div class="container d-flex justify-content-between">
             <div>
                 <a href="https://github.com/MartinCba" class="text-warning text-decoration-none mx-2">Hernandez</a>
                 <a href="https://github.com/GermanMetzger" class="text-warning text-decoration-none mx-2">Metzger</a>
                 <a href="https://github.com/Martin-VillegasReibold" class="text-warning text-decoration-none mx-2">Villegas</a>
             </div>
-            <p class="mb-0">Programación Web Dinámica</p>
+            <p class="mb-0 text-light">Programación Web Dinámica</p>
         </div>
     </footer>
 

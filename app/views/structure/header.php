@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar bg-dark bg-gradient navbar-expand-lg navbar-dark position-absolute top-0 w-100">
         <div class="container-fluid">
-            <a href="#" class="navbar-brand fw-bold"><img src="./img/favicon.jpg" style="height: 30px; width: auto;"> PHPMailer</a>
+            <a href="home.php" class="navbar-brand fw-bold"><img src="./img/favicon.jpg" style="height: 30px; width: auto;"> Inicio</a>
             <div class="navbar-collapse collapse" id="navbarNav">
                 <div class="mx-auto"></div>
                 <ul class="navbar-nav align-items-end">
