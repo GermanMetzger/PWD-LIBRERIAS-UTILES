@@ -12,6 +12,9 @@
 <body>
     <header>
         <h1>RESTABLECER CONTRASEÑA</h1>
+        <nav>
+            <a href="../../index.php"><h3>Volver</h3></a>
+        </nav>
 
     </header>
     <div class="container">
@@ -22,14 +25,16 @@
         <main>
             <div class="centro">
 
-                <form action="actionLost.php" class="form-container">
+                <form action="actions/recuperacionAction.php" class="form-container" method="POST">
+                    <!-- envio por oculto el tipo de verificacion -->
+                    <input type="hidden" name="tipoVerificacion" value='2'>
+                    <!-- ---------------------------------------- -->
                     <label for="email">Email:</label>
                     <input type="email" name="email" id="email">
                     
                     <input type="submit" value="Enviar">
                     
                 </form>
-                <a href="logIn.php">Volver</a><br>
 
 
             </div>

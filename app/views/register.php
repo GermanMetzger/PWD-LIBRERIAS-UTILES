@@ -12,6 +12,9 @@
 <body>
     <header>
         <h1>REGISTRARSE</h1>
+        <nav>
+            <a href="../../index.php"><h3>Volver</h3></a>
+        </nav>
 
     </header>
     <div class="container">
@@ -38,7 +41,7 @@
                     <input type="submit" value="Registrar">
                     
                 </form>
-                <a href="logIn.php">Volver</a><br>
+                <a href="logIn.php">Ya tenes cuenta?</a><br>
 
 
             </div>

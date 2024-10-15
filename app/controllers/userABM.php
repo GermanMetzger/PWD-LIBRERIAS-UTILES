@@ -41,7 +41,14 @@ class userAbm{
                 return $codigo;
             }
 
-            $html = generarCodigoVerificacion();
+            
+            $codigo = generarCodigoVerificacion();
+
+            $html = <<<HTML
+            <body>
+                $codigo
+            </body>
+            HTML;
         
         
         
@@ -56,7 +63,7 @@ class userAbm{
             }
 
             $retorno = [
-                "codigo" => $html,
+                "codigo" => $codigo,
                 "estado" => $msg
             ];
         
@@ -138,6 +145,22 @@ class userAbm{
         $arreglo = $obj->listar($where);
 
         return $arreglo;
+    }
+
+    /**
+     *  deveulve true o false si el mail existe en la base de datos
+     * @param string $param
+     * @return bool
+     */
+    public function usuarioExiste($email){
+        $usuario = $this->obtenerDatosUserPorMail($email);
+        if (empty($usuario)) {
+            $mailExistente = false;
+        } else {
+            $mailExistente = true;
+        }
+
+        return $mailExistente;
     }
 }
 

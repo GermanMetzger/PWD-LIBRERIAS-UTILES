@@ -12,6 +12,9 @@
 <body>
     <header>
         <h1>LOGIN</h1>
+        <nav>
+            <a href="../../index.php"><h3>Volver</h3></a>
+        </nav>
 
     </header>
     <div class="container">
@@ -22,7 +25,10 @@
         <main>
             <div class="centro">
 
-                <form action="actionLogIn.php" class="form-container">
+                <form action="actions/verificacionAction.php" class="form-container">
+                    <!-- envio por oculto el tipo de verificacion que quiero usar -->
+                    <input type="hidden" name="tipoVerificacion" value='2'>
+                    <!-- -------------------------------------------------------- -->
                     <label for="email">Email:</label>
                     <input type="email" name="email" id="email">
                     
