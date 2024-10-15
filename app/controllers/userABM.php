@@ -11,7 +11,7 @@ require 'PHPMAILER/SMTP.php';
 include_once("../../models/user.php");
 
 class userAbm{
-    public function mandarCodigo($email){
+    public function mandarCodigo($email,$tipo){
         //Create an instance; passing `true` enables exceptions
         $mail = new PHPMailer(true); 
         try {
@@ -41,31 +41,52 @@ class userAbm{
                 return $codigo;
             }
 
-            
-            $codigo = generarCodigoVerificacion();
+            if($tipo == "codigo"){
+                $titulo = "Codigo de verificacion";
+                $codigo = generarCodigoVerificacion();
 
-            $html = <<<HTML
-            <body>
-                $codigo
-            </body>
-            HTML;
+                $html = <<<HTML
+                <body>
+                    <h1>Su codigo es: $codigo</h1>
+                </body>
+                HTML;
+
+            }elseif($tipo == "contraseña"){
+                $titulo = "Clave perdida";
+                $user = $this->obtenerDatosUserPorMail($email);
+                $clave = $user["contraseña"];
+                $html = <<<HTML
+                <body>
+                    <h1>Su Contraseña es: $clave</h1>
+                </body>
+                HTML;
+            }
+
+            
+
         
         
         
             //Content
             $mail->isHTML(true); 
-            $mail->Subject = 'Codigo de verificacion';
+            $mail->Subject = $titulo;
             $mail->Body    = $html;
             if($mail->send()){
                 $msg = "Codigo enviado correctamente";
             }else{
-                $msg = "Error al enviar el codigo: ".$mail->ErrorInfo;
+                $msg = "Error al enviar el Mail: ".$mail->ErrorInfo;
             }
 
-            $retorno = [
-                "codigo" => $codigo,
-                "estado" => $msg
-            ];
+            if($tipo == "codigo"){
+                $retorno = [
+                    "codigo" => $codigo,
+                    "estado" => $msg
+                ];
+            }else{
+                $retorno = $msg;
+                
+            }
+
         
         
             
@@ -162,6 +183,7 @@ class userAbm{
 
         return $mailExistente;
     }
+
 }
 
 

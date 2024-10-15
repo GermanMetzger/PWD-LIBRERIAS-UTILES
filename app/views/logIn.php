@@ -13,7 +13,9 @@
     <header>
         <h1>LOGIN</h1>
         <nav>
-            <a href="../../index.php"><h3>Volver</h3></a>
+            <a href="../../index.php">
+                <h3>Volver</h3>
+            </a>
         </nav>
 
     </header>
@@ -31,12 +33,12 @@
                     <!-- -------------------------------------------------------- -->
                     <label for="email">Email:</label>
                     <input type="email" name="email" id="email">
-                    
+
                     <label for="password">Password:</label>
                     <input type="password" name="password" id="password">
 
                     <input type="submit" value="LogIn">
-                    
+
                 </form>
                 <a href="register.php">Registrarse</a><br>
                 <a href="lostPassword.php">¿Olvidaste tu contraseña?</a>
@@ -47,7 +49,9 @@
         <?php
         include_once('../../assets/structure/footer.php');
         ?>
+
     </div>
+
 </body>
 
 </html>

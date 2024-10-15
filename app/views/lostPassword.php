@@ -26,9 +26,6 @@
             <div class="centro">
 
                 <form action="actions/recuperacionAction.php" class="form-container" method="POST">
-                    <!-- envio por oculto el tipo de verificacion -->
-                    <input type="hidden" name="tipoVerificacion" value='2'>
-                    <!-- ---------------------------------------- -->
                     <label for="email">Email:</label>
                     <input type="email" name="email" id="email">
                     

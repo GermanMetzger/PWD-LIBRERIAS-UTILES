@@ -51,6 +51,7 @@
         include_once('assets/structure/footer.php');
         ?>
     </div>
+
 </body>
 
 </html>

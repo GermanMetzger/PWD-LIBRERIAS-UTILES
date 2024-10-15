@@ -29,9 +29,11 @@
         $nombre = $datos['name'];
         $contraseña = $datos['password'];
         $userAbm = new userAbm();
-        if($existe = $userAbm->usuarioExiste($datos["email"]));
-        $mail = $userAbm->mandarCodigo($mail);
-        //mail enviado correctamente
+        $existe = $userAbm->usuarioExiste($datos["email"]);
+        if(!$existe){
+            //mail enviado correctamente
+            $mail = $userAbm->mandarCodigo($mail,"codigo");
+        }
 
 
 

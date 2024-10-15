@@ -1,8 +1,8 @@
 <?php
 include_once("../../utils/functions.php");
 
+
 $datos = dataSubmitted();
-print_r($datos);
 $userAbm = new userAbm();
 
 
@@ -27,7 +27,7 @@ switch ($datos["tipoVerificacion"]) {
                 alert("Error: codigo incorrecto")
                 window.location.href = "http://localhost/LogIn/app/views/register.php";
             </script>
-        <?php
+            <?php
         }
 
 
@@ -38,21 +38,76 @@ switch ($datos["tipoVerificacion"]) {
         //primero verifico que el mail existe
         if ($userAbm->usuarioExiste($datos["email"])) {
             //busco el nombre 
-            $user = $userAbm->obtenerDatosUserPorMail($datos["email"])
-        ?>
+            $user = $userAbm->obtenerDatosUserPorMail($datos["email"]);
+            //contraseña correcta
+            if ($user["contraseña"] == $datos["password"]) {
+            ?>
+                <script>
+                    function desloguear() {
+                        sessionStorage.removeItem('email');
+                        sessionStorage.removeItem('name');
+                        sessionStorage.removeItem('password');
+                    }
+
+                    function loguear(email, name, password) {
+                        sessionStorage.setItem('email', email);
+                        sessionStorage.setItem('name', name);
+                        sessionStorage.setItem('password', password);
+                    }
+
+                    const email = <?php echo json_encode($user["mail"]); ?>;
+                    const name = <?php echo json_encode($user["nombre"]); ?>;
+                    const password = <?php echo json_encode($user["contraseña"]); ?>;
+                    if (sessionStorage.getItem('email') != null) {
+                        desloguear();
+                        loguear(email, name, password);
+                    } else {
+                        loguear(email, name, password);
+                    }
+                    window.location.href = "http://localhost/LogIn/app/views/actions/homeAction.php";
+                </script>
+            <?php
+            //contraseña incorrecta
+            }else{
+                ?>
+                <script>
+                    alert("Error: Mail o contraseña incorrecta (contraseña)")
+                    window.location.href = "http://localhost/LogIn/app/views/login.php";
+                </script>
+                <?php
+            }
+        }else{
+            ?>
             <script>
-                const email = <?php echo json_encode($user["mail"]); ?>;
-                const name = <?php echo json_encode($user["nombre"]); ?>;
-                const password = <?php echo json_encode($user["contraseña"]); ?>;
-                if (sessionStorage.getItem('email') == null) {
-                    alert("holaa!");
-                    sessionStorage.setItem('email', email);
-                    sessionStorage.setItem('name', name);
-                    sessionStorage.setItem('password', password);
-                }
-                window.location.href = "http://localhost/LogIn/app/views/actions/homeAction.php";
+                alert("Error: Mail no existente")
+                window.location.href = "http://localhost/LogIn/app/views/register.php";
             </script>
-<?php
+            <?php
         }
         break;
+        case 3:
+            //primero verifico que el codigo se ingreso bien
+        if ($datos["codigo"] == $datos["codigoSV"]) {
+            $msg = $userAbm->mandarCodigo($datos["email"],"contraseña");
+            echo $msg;
+
+            ?>
+            <script>
+                alert("Cuenta verificada, por favor revise su mail.")
+                //window.location.href = "http://localhost/LogIn/app/views/login.php";
+            </script>
+            <?php
+            
+
+            
+            
+        }else{
+            ?>
+            <script>
+                alert("Error: Codigo incorrecto")
+                window.location.href = "http://localhost/LogIn/app/views/lostPassword.php";
+            </script>
+            <?php
+        }
+            break;
 }

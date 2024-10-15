@@ -27,15 +27,10 @@
         $datos = dataSubmitted();
         $mail = $datos['email'];
         $userAbm = new userAbm();
-        $mailExistente = false;
-
-        $usuario = $userAbm->obtenerDatosUserPorMail($datos["email"]);
-        if (empty($usuario)) {
-            //el mail no existe
-        } else {
-            $mail = $userAbm->mandarCodigo($mail);
+        $existe = $userAbm->usuarioExiste($mail);
+        if($existe){
             //mail enviado correctamente
-            $mailExistente = true;
+            $mail = $userAbm->mandarCodigo($mail,"codigo");
         }
 
 
@@ -43,13 +38,13 @@
 
         <main>
             <div class="centro">
-                <?php if ($mailExistente): ?>
+                <?php if ($existe): ?>
                     <!-- Si el mail ya existe, muestra el mensaje -->
                     <h2>por favor verifica tu email para completar la verificación.</h2>
                     <form action="verificacionAction.php" method="post">
                         <!-- envio por oculto la información del usuario y el código de verificación -->
                         <input type="hidden" name="email" value='<?php echo $datos['email']; ?>'>
-                        <input type="hidden" name="tipoVerificacion" value='2'>
+                        <input type="hidden" name="tipoVerificacion" value='3'>
                         <input type="hidden" name="codigoSV" value='<?php echo $mail["codigo"]; ?>'>
                         <!-- ----------------------------------------------------------------------- -->
                         <label for="codigo">Código:</label>
