@@ -4,53 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/header&footer.css">
-    <link rel="stylesheet" href="../../assets/css/formulario.css">
-    <title>REGISTRARSE</title>
+    <link rel="icon" type="image/jpg" href="./img/favicon.jpg" />
+    <title>Registrar</title>
 </head>
 
 <body>
-    <header>
-        <h1>REGISTRARSE</h1>
-        <nav>
-            <a href="../../index.php"><h3>Volver</h3></a>
-        </nav>
+    <?php
+    include_once('./structure/header.php');
+    include_once("../../config.php");
+    ?>
+    <main>
+        <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">
+            <div class="card text-center bg-dark text-light" style="width: 68rem;">
+                <div class="card-header">
+                    <img src="./img/PHPMailer.jpg" alt="logo" style="height: 50px;">
+                    <h4>Formulario de registro</h4>
+                </div>
+                <div class="card-body">
+                    <form action="./actions/registerAction.php" class="needs-validation" method="POST">
+                        <!-- envio por oculto el tipo de verificacion que quiero usar -->
+                        <input type="hidden" name="tipoVerificacion" value='2'>
+                        <!-- -------------------------------------------------------- -->
+                        <div class="mb-3 row justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control form-control-sm" name="email" id="email" required>
+                                <div class="invalid-feedback">
+                                    Por favor, ingresá tu Email.
+                                </div>
+                            </div>
+                        </div>
 
-    </header>
-    <div class="container">
-        <?php
-        include_once('../../assets/structure/header.php');
-        ?>
+                        <div class="mb-3 row justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="form-control form-control-sm" name="nombre" id="nombre" required>
+                                <div class="invalid-feedback">
+                                    Por favor, ingresá tu nombre.
+                                </div>
+                            </div>
+                        </div>
 
-        <main>
-            <div class="centro">
+                        <div class="mb-3 row justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control form-control-sm" name="password" id="password" required>
+                                <div class="invalid-feedback">
+                                    Por favor, ingresá tu contraseña.
+                                </div>
+                            </div>
+                        </div>
 
-                <form action="./actions/registerAction.php" class="form-container" method="POST">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email">
+                        <div class="mb-3 row justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                                <label for="password2">Repetir Password:</label>
+                                <input type="password" class="form-control form-control-sm" name="password2" id="password2" required>
+                                <div class="invalid-feedback">
+                                    Por favor, ingresá tu contraseña.
+                                </div>
+                            </div>
+                        </div>
 
-                    <label for="name">Nombre:</label>
-                    <input type="text" name="name" id="name">
-
-                    <label for="password">Contraseña:</label>
-                    <input type="password" name="password" id="password">
-
-                    <label for="password2">Repetir Contraseña:</label>
-                    <input type="password" name="password2" id="password2">
-                    
-                    <input type="submit" value="Registrar">
-                    
-                </form>
-                <a href="logIn.php">Ya tenes cuenta?</a><br>
-
-
+                        <div class="mb-3 row justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                                <input type="submit" class="btn btn-warning btn-sm w-100" value="Registrar">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-4 text-center">
+                            <a href="logIn.php" class="text-warning">Ya tenes cuenta?</a><br>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </main>
+        </div>
+    </main>
 
-        <?php
-        include_once('../../assets/structure/footer.php');
-        ?>
-    </div>
+    <?php
+    include_once('./structure/footer.php');
+    ?>
+
 </body>
 
 </html>

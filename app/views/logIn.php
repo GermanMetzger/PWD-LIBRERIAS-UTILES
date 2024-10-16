@@ -30,7 +30,7 @@
                                 <label for="email">Email:</label>
                                 <input type="email" class="form-control form-control-sm" name="email" id="email" required>
                                 <div class="invalid-feedback">
-                                    Por favor, ingresá tu nombre de usuario.
+                                    Por favor, ingresá tu Email.
                                 </div>
                             </div>
                         </div>
@@ -61,14 +61,8 @@
             </div>
         </div>
     </main>
-
-
     <?php
     include_once('./structure/footer.php');
     ?>
-
-
-
 </body>
-
 </html>
