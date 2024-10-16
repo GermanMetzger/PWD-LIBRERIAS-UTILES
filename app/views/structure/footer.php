@@ -11,6 +11,7 @@
     <footer class="bg-dark py-3" style="position: absolute; bottom: 0; width: 100%;">
         <div class="container d-flex justify-content-between">
             <div>
+                <img src="./img/github.svg" style="height: 24px; width: auto;">
                 <a href="https://github.com/MartinCba" class="text-warning text-decoration-none mx-2">Hernandez</a>
                 <a href="https://github.com/GermanMetzger" class="text-warning text-decoration-none mx-2">Metzger</a>
                 <a href="https://github.com/Martin-VillegasReibold" class="text-warning text-decoration-none mx-2">Villegas</a>

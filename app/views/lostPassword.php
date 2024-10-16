@@ -14,7 +14,7 @@
     include_once("../../config.php");
     ?>
 
-<main>
+    <main>
         <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">
             <div class="card text-center bg-dark text-light" style="width: 68rem;">
                 <div class="card-header">
@@ -51,4 +51,5 @@
     include_once('./structure/footer.php');
     ?>
 </body>
+
 </html>
