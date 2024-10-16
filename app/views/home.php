@@ -29,6 +29,12 @@
                     <p>Aunque PHP cuenta con la función básica <b>mail()</b>, PHPMailer es más fácil de usar y nos brinda una sintaxis orientada a objetos más limpia. Como también nos provee asistencia para hacer uso de funciones necesarias en la actualidad como encriptación, autenticación, mensajes HTML y archivos adjuntos.</p>
                     <p>Los usos más habituales para esta libreria son la de crear formularios de contactos donde los usuarios cargan la información y la podemos recibir a través de un correo. Y también para el envío de corros másivos configurados mediante programación.</p>
                 </div>
+                <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-4 text-center">
+                            <a href="https://docs.google.com/document/d/1Rer4aSoRU_moQe4WneEperxC3GV27gPCcsjZcoXYT3w/edit?tab=t.0" class="text-warning">Trabajo de investigación</a><br>
+                            <a href="https://phpmailer.github.io/PHPMailer/" class="text-warning">Documentación PHPMailer</a>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
