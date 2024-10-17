@@ -30,7 +30,7 @@
             <div class="card text-center bg-dark text-light" style="width: 68rem;">
                 <div class="card-header">
                     <img src="../img/PHPMailer.jpg" alt="logo" style="height: 50px;">
-                    <h4>Recuperación de password</h4>
+                    <h4>Registrar cuenta nueva</h4>
                 </div>
                 <div class="card-body">
                     <?php if ($existe): ?>
