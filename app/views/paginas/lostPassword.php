@@ -22,7 +22,7 @@
                     <h4>Restablecer Password</h4>
                 </div>
                 <div class="card-body">
-                    <form action="actions/recuperacionAction.php" class="needs-validation" method="POST">
+                    <form action="../actions/recuperacionAction.php" class="needs-validation" method="POST">
                         <!-- envio por oculto el tipo de verificacion que quiero usar -->
                         <input type="hidden" name="tipoVerificacion" value='2'>
                         <!-- -------------------------------------------------------- -->

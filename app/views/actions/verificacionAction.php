@@ -94,7 +94,7 @@ switch ($datos["tipoVerificacion"]) {
             ?>
             <script>
                 alert("Cuenta verificada, por favor revise su mail.")
-                //window.location.href = "http://localhost/LogIn/app/views/login.php";
+                window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/paginas/login.php";
             </script>
             <?php
             
