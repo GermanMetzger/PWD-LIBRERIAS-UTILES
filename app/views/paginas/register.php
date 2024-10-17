@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <form action="../actions/registerAction.php" class="needs-validation" method="POST">
                         <!-- envio por oculto el tipo de verificacion que quiero usar -->
-                        <input type="hidden" name="tipoVerificacion" value='2'>
+                        <input type="hidden" name="tipoVerificacion" value='1'>
                         <!-- -------------------------------------------------------- -->
                         <div class="mb-3 row justify-content-center">
                             <div class="col-md-6 col-lg-4">
@@ -37,8 +37,8 @@
 
                         <div class="mb-3 row justify-content-center">
                             <div class="col-md-6 col-lg-4">
-                                <label for="nombre">Nombre:</label>
-                                <input type="text" class="form-control form-control-sm" name="nombre" id="nombre" required>
+                                <label for="name">Nombre:</label>
+                                <input type="text" class="form-control form-control-sm" name="name" id="name" required>
                                 <div class="invalid-feedback">
                                     Por favor, ingresá tu nombre.
                                 </div>
