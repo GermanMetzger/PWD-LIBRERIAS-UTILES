@@ -17,7 +17,7 @@ switch ($datos["tipoVerificacion"]) {
                 <title>Redireccionando...</title>
                 <script>
                     alert("Registrado correctamente. por favor inicie sesión!")
-                    window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/login.php";
+                    window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/paginas/login.php";
                 </script>
             <?php
             };
@@ -25,7 +25,7 @@ switch ($datos["tipoVerificacion"]) {
             ?>
             <script>
                 alert("Error: codigo incorrecto")
-                window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/register.php";
+                window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/paginas/register.php";
             </script>
             <?php
         }
@@ -72,7 +72,7 @@ switch ($datos["tipoVerificacion"]) {
                 ?>
                 <script>
                     alert("Error: Mail o contraseña incorrecta (contraseña)")
-                    window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/login.php";
+                    window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/paginas/login.php";
                 </script>
                 <?php
             }
@@ -80,7 +80,7 @@ switch ($datos["tipoVerificacion"]) {
             ?>
             <script>
                 alert("Error: Mail no existente")
-                window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/register.php";
+                window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/paginas/register.php";
             </script>
             <?php
         }
@@ -105,7 +105,7 @@ switch ($datos["tipoVerificacion"]) {
             ?>
             <script>
                 alert("Error: Codigo incorrecto")
-                window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/lostPassword.php";
+                window.location.href = "http://localhost/PWD-LIBRERIAS-UTILES/app/views/paginas/lostPassword.php";
             </script>
             <?php
         }

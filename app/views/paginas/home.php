@@ -10,14 +10,14 @@
 
 <body>
     <?php
-    include_once('./structure/header.php');
-    include_once("../../config.php");
+    include_once('../structure/header.php');
+    include_once("../../../config.php");
     ?>
 
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">
         <div class="card text-center bg-dark text-light" style="width: 68rem;">
             <div class="card-header">
-                <img src="./img/PHPMailer.jpg" alt="logo">
+                <img src="../img/PHPMailer.jpg" alt="logo">
             </div>
             <div class="card-body">
 
@@ -40,7 +40,7 @@
     </div>
 
     <?php
-    include_once('./structure/footer.php');
+    include_once('../structure/footer.php');
     ?>
 </body>
 

@@ -1,1 +1,1 @@
-<script>location.href = "./app/views/home.php"</script>
+<script>location.href = "./app/views/paginas/home.php"</script>

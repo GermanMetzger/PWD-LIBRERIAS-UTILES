@@ -4,54 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../assets/css/header&footer.css">
-    <link rel="stylesheet" href="../../../assets/css/formulario.css">
-    <title>HOME</title>
+    <link rel="icon" type="image/jpg" href="../img/favicon.jpg" />
+    <title>Usuario</title>
 </head>
 
 <body>
-    <header>
-        <?php
-        include_once("../../utils/functions.php");
-        include_once('../../../assets/structure/header.php');
-        ?>
+    <?php
+    include_once('../structure/header.php');
+    include_once("../../../config.php");
+    ?>
 
-        <h1>HOME</h1>
-        <nav>
-            <a href="../../../index.php">
-                <h3 onclick=desloguear()>Desloguear</h3>
-            </a>
-        </nav>
+    <main>
+        <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">
+            <div class="card text-center bg-dark text-light" style="width: 68rem;">
+                <div class="card-header">
+                    <img src="../img/PHPMailer.jpg" alt="logo" style="height: 50px;">
+                    <h4>Usuario registrado</h4>
+                </div>
+                <div class="card-body">
+                    <form action="../actions/verificacionAction.php" class="needs-validation">
+                        <!-- envio por oculto el tipo de verificacion que quiero usar -->
+                        <input type="hidden" name="tipoVerificacion" value='2'>
+                        <!-- -------------------------------------------------------- -->
+                        <div class="mb-3 row justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                                <h5>Nombre: <span id="name" class="text-warning"></span></h5>
+                            </div>
+                        </div>
 
-    </header>
-    <div class="container">
-        <script></script>
+                        <div class="mb-3 row justify-content-center">
+                            <div class="col-md-6 col-lg-6">
+                                <h5>Email: <span id="email" class="text-warning"></span></h5>
+                            </div>
+                        </div>
 
+                        <div class="mb-3 row justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                                <h5>Contraseña: <span id="password" class="text-warning"></span></h5>
+                            </div>
+                        </div>
 
-        <main>
-            <div class="centro">
-                <h1>Información del Usuario</h1>
-                <p>Nombre: <span id="name"></span></p>
-                <p>Email: <span id="email"></span></p>
-                <p>Contraseña: <span id="password"></span></p>
-
-                <script>
-                    var name = sessionStorage.getItem('name');
-                    var email = sessionStorage.getItem('email');
-                    var password = sessionStorage.getItem('password');
-
-                    // Muestra los valores en el HTML
-                    document.getElementById('name').textContent = name;
-                    document.getElementById('email').textContent = email;
-                    document.getElementById('password').textContent = password;
-                </script>
+                        <div class="mb-3 row justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                            <a href="../../../index.php" class="btn btn-warning" onclick="desloguear()">Cerrar sesión</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </main>
+        </div>
 
-        <?php
-        include_once('../../../assets/structure/footer.php');
-        ?>
-    </div>
+        <script>
+            var name = sessionStorage.getItem('name');
+            var email = sessionStorage.getItem('email');
+            var password = sessionStorage.getItem('password');
+
+            // Muestra los valores en el HTML
+            document.getElementById('name').textContent = name;
+            document.getElementById('email').textContent = email;
+            document.getElementById('password').textContent = password;
+        </script>
+
+    </main>
+
     <script>
         function desloguear() {
             sessionStorage.removeItem('email');
@@ -59,6 +74,9 @@
             sessionStorage.removeItem('password');
         }
     </script>
+    <?php
+    include_once('../structure/footer.php');
+    ?>
 </body>
 
 </html>
