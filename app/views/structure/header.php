@@ -10,18 +10,18 @@
 <body>
     <nav class="navbar bg-dark bg-gradient navbar-expand-lg navbar-dark position-absolute top-0 w-100">
         <div class="container-fluid">
-            <a href="home.php" class="navbar-brand fw-bold"><img src="../img/favicon.jpg" style="height: 30px; width: auto;"> Inicio</a>
+            <a href="http://localhost/PWD-LIBRERIAS-UTILES/app/views/paginas/home.php" class="navbar-brand fw-bold"><img src="../img/favicon.jpg" style="height: 30px; width: auto;"> Inicio</a>
             <div class="navbar-collapse collapse" id="navbarNav">
                 <div class="mx-auto"></div>
                 <ul class="navbar-nav align-items-end">
                     <li class="nav-item">
-                        <a href="./logIn.php" class="nav-link text-white">Login</a>
+                        <a href="http://localhost/PWD-LIBRERIAS-UTILES/app/views/paginas/logIn.php" class="nav-link text-white">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a href="register.php" class="nav-link text-white">Registrar</a>
+                        <a href="http://localhost/PWD-LIBRERIAS-UTILES/app/views/paginas/register.php" class="nav-link text-white">Registrar</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./lostPassword.php" class="nav-link text-white">¿Olvidaste tu contraseña?</a>
+                        <a href="http://localhost/PWD-LIBRERIAS-UTILES/app/views/paginas/lostPassword.php" class="nav-link text-white">¿Olvidaste tu contraseña?</a>
                     </li>
                 </ul>
             </div>
