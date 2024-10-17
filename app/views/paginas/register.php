@@ -21,7 +21,7 @@
                     <h4>Formulario de registro</h4>
                 </div>
                 <div class="card-body">
-                    <form action="./actions/registerAction.php" class="needs-validation" method="POST">
+                    <form action="../actions/registerAction.php" class="needs-validation" method="POST">
                         <!-- envio por oculto el tipo de verificacion que quiero usar -->
                         <input type="hidden" name="tipoVerificacion" value='2'>
                         <!-- -------------------------------------------------------- -->
