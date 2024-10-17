@@ -116,7 +116,7 @@ class user {
         $sql = "INSERT INTO user(mail, nombre, contraseña) VALUES(
             '" . $this->getMail() . "', 
             '" . $this->getNombre() . "', 
-            " . $this->getContraseña() . "
+            '" . $this->getContraseña() . "'
             );";
             
 
