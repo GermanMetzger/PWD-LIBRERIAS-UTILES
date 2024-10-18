@@ -24,7 +24,7 @@
                 <div class="card-body">
                     <form action="../actions/recuperacionAction.php" class="needs-validation" method="POST">
                         <!-- envio por oculto el tipo de verificacion que quiero usar -->
-                        <input type="hidden" name="tipoVerificacion" value='2'>
+                        <input type="hidden" name="tipoVerificacion" value='3'>
                         <!-- -------------------------------------------------------- -->
                         <div class="mb-3 row justify-content-center">
                             <div class="col-md-6 col-lg-4">
