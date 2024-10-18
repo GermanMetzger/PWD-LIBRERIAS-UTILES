@@ -149,9 +149,9 @@ class userAbm
                     </div>
                 
                     <footer>
-                    <a href="https://github.com/MartinCba" class="text-warning text-decoration-none mx-2">Hernandez</a>
-                    <a href="https://github.com/GermanMetzger" class="text-warning text-decoration-none mx-2">Metzger</a>
-                    <a href="https://github.com/Martin-VillegasReibold" class="text-warning text-decoration-none mx-2">Villegas</a>
+                    <a href="https://github.com/MartinCba" class="text-warning text-decoration-none mx-2">Hernandez</a><br>
+                    <a href="https://github.com/GermanMetzger" class="text-warning text-decoration-none mx-2">Metzger</a><br>
+                    <a href="https://github.com/Martin-VillegasReibold" class="text-warning text-decoration-none mx-2">Villegas</a><br>
                     </footer>
                 
                 </body>
